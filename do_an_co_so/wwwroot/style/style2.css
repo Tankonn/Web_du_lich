@@ -1,0 +1,280 @@
+    /* Basic reset styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    /* Header styling */
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-color: #fff;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+      
+      .logo {
+        width: 60px;
+        height: 60px;
+        margin: 10px 20px;
+      }
+      .btn {
+        background-color: #77dada;
+        color: #333;
+        padding: 10px 20px;
+        border: 1px solid #77dada;
+        border-radius: 100px;
+        text-decoration: none;
+      }
+      .contract{
+        font-size: 16px;
+          line-height: 30px;
+          font-weight: 500;
+      }
+      
+      
+      nav {
+        margin-right: 20px;
+      }
+      
+      nav a {
+        text-decoration: none;
+        color: #333;
+        margin-right: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 80px;
+      }
+      
+      nav a:hover {
+        color: #000;
+      }
+
+    /* Main content styling */
+    
+    main {
+        padding-top: 20px;
+    }
+    
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    /* Hero section styling */
+    
+    .hero {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    .hero img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+    
+    .hero-content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px;
+        padding-top: 1000px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+    }
+    
+    .hero-content h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    
+    .hero-content p {
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    .hero-content a {
+        background-color: #77dada;
+        color: #333;
+        padding: 10px 20px;
+        border: 1px solid #77dada;
+        border-radius: 100px;
+        text-decoration: none;
+    }
+   
+    /* News section styling */
+    
+    .news {
+    margin-bottom: 20px;
+}
+
+.news h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.news-item {
+    width: calc(100% / 3);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.news-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.news-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.news-item p {
+    line-height: 1.2;
+}
+
+.news-button {
+
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 20px;
+}
+    /* Features section styling */
+    
+    .features {
+        margin-bottom: 20px;
+    }
+    
+    .features h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    
+    .features-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .feature-item {
+        width: 30%;
+        margin-bottom: 10px;
+    }
+    
+    .feature-item a {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .feature-item img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border-radius: 20px;
+    }
+    
+    .feature-item h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    .feature-item p {
+        line-height: 1.2;
+    }
+    
+    .features-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .feature-item {
+        width: calc(100% / 3);
+        /* Chia đều 3 cột trên mỗi hàng */
+        padding: 10px;
+        /* Khoảng cách giữa các ô đặc sắc */
+        box-sizing: border-box;
+        /* Đảm bảo kích thước tính cả padding và border */
+    }
+    
+    .feature-button {
+        width: 100%;
+        /* Đảm bảo nút chiếm toàn bộ phần tử */
+        border: none;
+        /* Loại bỏ viền */
+        background: none;
+        /* Loại bỏ nền */
+        cursor: pointer;
+        text-align: left;
+        border-radius: 20px;
+    }
+    /* Footer styling */
+    
+    footer {
+        background-color: #000;
+        color: #fff;
+        padding: 20px 0;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .footer-content p {
+        margin: 0;
+    }
+    
+    .social-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .social-links li {
+        display: inline-block;
+        margin-left: 10px;
+    }
+    
+    .social-links li:first-child {
+        margin-left: 0;
+    }
+    
+    .social-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+
+
+    

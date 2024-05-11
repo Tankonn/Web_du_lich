@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Du Lịch</title>
+  <link rel="stylesheet" href="~/style/style.css">
+</head>
+<body>
+    
+  <header>
+
+        <a href="index.html"><img src="~/style/img/logo.jpg" alt="Logo" class="logo"></a>
+    <nav>
+      <a asp-controller="search" asp-action="search">Tìm Tour</a>
+      <a href="dat-tour.html">Đặt Tour</a>
+      <a href="giao_dien.html">Blog Du Lịch</a>
+      
+    </nav>
+    <div>
+      <a href="#" class="btn">Thông tin liên hệ</a>
+    </div>
+  </header>
+  <main>
+    
+    @RenderBody()
+   
+      
+  </main>
+</body>
+<footer>
+  <p>© 2024 Website Du Lịch. Đồ án cơ sở.</p>
+</footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</html>

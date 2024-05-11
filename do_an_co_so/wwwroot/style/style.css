@@ -1,0 +1,275 @@
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin: 10px 20px;
+}
+.btn {
+  background-color: #77dada;
+  color: #333;
+  padding: 10px 20px;
+  border: 1px solid #77dada;
+  border-radius: 100px;
+  text-decoration: none;
+}
+.contract{
+  font-size: 16px;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+
+nav {
+  float: right;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 80px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nổi bật */
+.noi-bat {
+  margin: 40px 0;
+}
+
+.noi-bat h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.noi-bat ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.noi-bat li {
+  margin: 10px;
+  width: 250px;
+  height: 350px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.noi-bat li a {
+  display: block;
+  text-decoration: none;
+}
+
+.noi-bat li img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.noi-bat li h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Tìm kiếm nhanh */
+.tim-kiem-nhanh {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.tim-kiem-nhanh h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tim-kiem-nhanh form {
+  display: flex;
+  justify-content: center;
+}
+
+.tim-kiem-nhanh input {
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.tim-kiem-nhanh select {
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.tim-kiem-nhanh button {
+  height: 40px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Tour đặc biệt */
+.tour-dac-biet {
+  margin: 40px 0;
+}
+
+.tour-dac-biet h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tour-dac-biet ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tour-dac-biet li {
+  margin: 10px;
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tour-dac-biet li a {
+  display: block;
+  text-decoration: none;
+}
+
+.tour-dac-biet li img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tour-dac-biet li h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.tour-dac-biet li p {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Đánh giá */
+.danh-gia {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.danh-gia h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.danh-gia ul {
+  list-style: none;
+}
+
+.danh-gia li {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.danh-gia li blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.danh-gia li p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.danh-gia li cite {
+  font-style: italic;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* Footer */
+footer {
+  position:static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
