@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "DatTour";
+}
+<link rel="stylesheet" href="style1.css">
+<main>
+    <div class="container">
+        <section class="payment">
+            <h2>Thông tin thanh toán</h2>
+            <div class="payment-form">
+                <div class="customer-info">
+                    <h3>Thông tin khách hàng</h3>
+                    <div class="input-group">
+                        <label for="name">Họ và tên:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                </div>
+                <div class="order-details">
+                    <h3>Chi tiết đặt Tour</h3>
+                    <table class="order-table">
+                        <thead>
+                            <tr>
+                                <th>Dịch vụ</th>
+                                <th>Số lượng</th>
+                                <th>Giá</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dịch vụ 1</td>
+                                <td>1</td>
+                                <td>100.000đ</td>
+                                <td>100.000đ</td>
+                            </tr>
+                            <tr>
+                                <td>Dịch vụ 2</td>
+                                <td>2</td>
+                                <td>50.000đ</td>
+                                <td>100.000đ</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3">Tổng cộng</td>
+                                <td>200.000đ</td>
+                            </tr>
+                        </tbody>
+                    </table>>
+                    <div class="payment-methods">
+                        <h3>Phương thức thanh toán</h3>
+                        <div class="payment-method">
+                            <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                            <label for="paypal">Paypal</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="momo" name="paymentMethod" value="momo">
+                            <label for="momo">Momo</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="bankTransfer" name="paymentMethod" value="bankTransfer">
+                            <label for="bankTransfer">Chuyển khoản ngân hàng</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn">Thanh toán</button>
+        </section>
+    </div>
+</main>
+
