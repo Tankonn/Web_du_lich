@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Du Lịch</title>
   <link rel="stylesheet" href="~/style/style.css">
+    <link rel="stylesheet" href="~/style/style1.css">
+    <link rel="stylesheet" href="~/style/style2.css">
+    <link rel="stylesheet" href="~/style/style3.css">
 </head>
 <body>
     
   <header>
-
-        <a href="index.html"><img src="~/style/img/logo.jpg" alt="Logo" class="logo"></a>
+     
+      <a asp-controller="Home" asp-action="Index"><img src="~/style/img/logo.jpg" alt="Logo" class="logo"></a>
     <nav>
+      <a asp-controller="Home" asp-action="Index">Trang chủ</a>
       <a asp-controller="search" asp-action="search">Tìm Tour</a>
-      <a href="dat-tour.html">Đặt Tour</a>
-      <a href="giao_dien.html">Blog Du Lịch</a>
+      <a asp-controller="Home" asp-action="DatTour">Đặt Tour</a>
+      <a asp-controller="Home" asp-action="Blog">Blog</a>
+
       
     </nav>
     <div>

@@ -22,7 +22,14 @@ namespace do_an_co_so.Controllers
         {
             return View();
         }
-
+        public IActionResult Blog()
+        {
+            return View();
+        }
+        public IActionResult DatTour()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
