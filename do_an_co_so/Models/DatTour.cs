@@ -16,7 +16,7 @@ namespace do_an_co_so.Models
         public int? Tinhtrang { get; set; }
         public Khachsan Makhachsan { get; set; }
         public Tour tour { get; set; }
-        public Phuongthucthanhtoan phuongthucthanhtoan { get; set; }
+        public List<Phuongthucthanhtoan> phuongthucthanhtoan { get; set; }
 
     }
 }
