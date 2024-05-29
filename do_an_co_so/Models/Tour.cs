@@ -1,7 +1,10 @@
-﻿namespace do_an_co_so.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace do_an_co_so.Models
 {
     public class Tour
     {
+        [Key]
         public int MaTour { get; set; }
         public string TenTour { get; set; }
         public string Mota {  get; set; }
