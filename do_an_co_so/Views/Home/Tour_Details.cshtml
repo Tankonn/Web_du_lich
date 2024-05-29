@@ -1,0 +1,33 @@
+﻿@{
+       ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <link rel="stylesheet" href="style4.css">
+   <main>
+        <section class="content">
+            <section class="tour-details">
+                <h1>Tour 1</h1>
+                <div class="image-gallery">
+                    <button class="prev" onclick="prevImage()">&#10094;</button>
+                    <img id="currentImage"src="~/style/img/imagae2.jpg" alt="Tour 1">
+
+                    <button class="next" onclick="nextImage()">&#10095;</button>
+                </div>
+                <p>Chi tiết về tour du lịch này...</p>
+                <p>Giá: $1000</p>
+                <button id="bookNowBtn">Đặt ngay</button>
+            </section>
+            <aside class="services">
+                <h2>Dịch Vụ</h2>
+                <ul>
+                    <a href="#">Đặt vé máy bay</a>
+                    <a href="#">Thuê xe du lịch</a>
+                    <a href="#">Hướng dẫn viên du lịch</a>
+                    <a href="#">Đặt phòng khách sạn</a>
+                    <a href="#">Bảo hiểm du lịch</a>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
