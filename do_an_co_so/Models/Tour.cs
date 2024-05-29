@@ -16,5 +16,6 @@ namespace do_an_co_so.Models
         public int Diadiemkhoihanh {  get; set; }
         public string Thoiluong { get; set; }
         public string Diemden {  get; set; }
+        public Khachsan Khachsan { get; set; }
     }
 }

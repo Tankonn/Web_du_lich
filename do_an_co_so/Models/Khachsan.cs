@@ -13,6 +13,8 @@ namespace do_an_co_so.Models
         public int Tinhtrang { get; set; }
         public string Mota { get; set; }   
         public string Thongtinchitiet {  get; set; }
+        public List<Tour> Tours { get; set; }
+
 
     }
 }
