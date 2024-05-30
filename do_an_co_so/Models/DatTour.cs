@@ -4,7 +4,7 @@ namespace do_an_co_so.Models
 {
     public class DatTour
     {
-        [Key] public int IdDattour { get; set; }
+        [Key] public int? IdDattour { get; set; }
         public string TenKh { get; set; }
         public string Sdt { get; set; }
         public string Email { get; set; }

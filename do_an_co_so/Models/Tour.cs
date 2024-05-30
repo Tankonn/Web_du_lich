@@ -4,7 +4,7 @@ namespace do_an_co_so.Models
 {
     public class Tour
     {
-        [Key]public int MaTour { get; set; }
+        [Key]public int? MaTour { get; set; }
         public string TenTour { get; set; }
         public string Mota { get; set; }
         public string Lichtrinh { get; set; }

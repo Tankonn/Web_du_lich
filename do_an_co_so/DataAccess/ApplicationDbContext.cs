@@ -1,10 +1,11 @@
 ﻿using do_an_co_so.Models;
 using Microsoft.EntityFrameworkCore;
-using do_an_co_so.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.General;
 
 namespace do_an_co_so.DataAccess
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }
@@ -15,4 +16,5 @@ namespace do_an_co_so.DataAccess
         public DbSet<DatTour> DatTours { get; set; }
 
     }
+
 }

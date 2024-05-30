@@ -4,7 +4,7 @@ namespace do_an_co_so.Models
 {
     public class KhachSan
     {
-        [Key]public int Makhachsan { get; set; }
+        [Key]public int? Makhachsan { get; set; }
         public string Tenkhachsan { get; set; }
         public string Diachi { get; set; }
         public string Dongia { get; set; }
