@@ -28,34 +28,22 @@ namespace do_an_co_so.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "phuongthucthanhtoans",
+                name: "Khachsans",
                 columns: table => new
                 {
-                    Mapt = table.Column<int>(type: "int", nullable: false)
+                    Makhachsan = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Tenpt = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_phuongthucthanhtoans", x => x.Mapt);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PKhachsans",
-                columns: table => new
-                {
-                    Makhachsan = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Tenkhachsan = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Diachi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Dongia = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    images = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Images = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Tinhtrang = table.Column<int>(type: "int", nullable: false),
                     Mota = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Thongtinchitiet = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PKhachsans", x => x.Makhachsan);
+                    table.PrimaryKey("PK_Khachsans", x => x.Makhachsan);
                 });
 
             migrationBuilder.CreateTable(
@@ -69,69 +57,97 @@ namespace do_an_co_so.Migrations
                     Lichtrinh = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Banggia = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Thongtinlienquan = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    images = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Images = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Tinhtrang = table.Column<int>(type: "int", nullable: false),
                     Diadiemkhoihanh = table.Column<int>(type: "int", nullable: false),
                     Thoiluong = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Diemden = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Diemden = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    KhachSanMakhachsan = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tours", x => x.MaTour);
+                    table.ForeignKey(
+                        name: "FK_Tours_Khachsans_KhachSanMakhachsan",
+                        column: x => x.KhachSanMakhachsan,
+                        principalTable: "Khachsans",
+                        principalColumn: "Makhachsan");
                 });
 
             migrationBuilder.CreateTable(
-                name: "datTours",
+                name: "DatTours",
                 columns: table => new
                 {
-                    IdDattour = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    TenKh = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    sdt = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    diachi = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Mapt = table.Column<int>(type: "int", nullable: false),
-                    yeucau = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MaTour = table.Column<int>(type: "int", nullable: false),
+                    IdDattour = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenKh = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Sdt = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Diachi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Mapt = table.Column<int>(type: "int", nullable: true),
+                    Yeucau = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Matour = table.Column<int>(type: "int", nullable: true),
                     Tinhtrang = table.Column<int>(type: "int", nullable: true),
-                    Makhachsan1 = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Makhachsan = table.Column<int>(type: "int", nullable: true),
+                    KhachsanMakhachsan = table.Column<int>(type: "int", nullable: false),
+                    TourMaTour = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_datTours", x => x.IdDattour);
+                    table.PrimaryKey("PK_DatTours", x => x.IdDattour);
                     table.ForeignKey(
-                        name: "FK_datTours_PKhachsans_Makhachsan1",
-                        column: x => x.Makhachsan1,
-                        principalTable: "PKhachsans",
+                        name: "FK_DatTours_Khachsans_KhachsanMakhachsan",
+                        column: x => x.KhachsanMakhachsan,
+                        principalTable: "Khachsans",
                         principalColumn: "Makhachsan",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_datTours_Tours_MaTour",
-                        column: x => x.MaTour,
+                        name: "FK_DatTours_Tours_TourMaTour",
+                        column: x => x.TourMaTour,
                         principalTable: "Tours",
                         principalColumn: "MaTour",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Phuongthucthanhtoans",
+                columns: table => new
+                {
+                    Mapt = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Tenpt = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DatTourIdDattour = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Phuongthucthanhtoans", x => x.Mapt);
                     table.ForeignKey(
-                        name: "FK_datTours_phuongthucthanhtoans_Mapt",
-                        column: x => x.Mapt,
-                        principalTable: "phuongthucthanhtoans",
-                        principalColumn: "Mapt",
+                        name: "FK_Phuongthucthanhtoans_DatTours_DatTourIdDattour",
+                        column: x => x.DatTourIdDattour,
+                        principalTable: "DatTours",
+                        principalColumn: "IdDattour",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_datTours_Makhachsan1",
-                table: "datTours",
-                column: "Makhachsan1");
+                name: "IX_DatTours_KhachsanMakhachsan",
+                table: "DatTours",
+                column: "KhachsanMakhachsan");
 
             migrationBuilder.CreateIndex(
-                name: "IX_datTours_Mapt",
-                table: "datTours",
-                column: "Mapt");
+                name: "IX_DatTours_TourMaTour",
+                table: "DatTours",
+                column: "TourMaTour");
 
             migrationBuilder.CreateIndex(
-                name: "IX_datTours_MaTour",
-                table: "datTours",
-                column: "MaTour");
+                name: "IX_Phuongthucthanhtoans_DatTourIdDattour",
+                table: "Phuongthucthanhtoans",
+                column: "DatTourIdDattour");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tours_KhachSanMakhachsan",
+                table: "Tours",
+                column: "KhachSanMakhachsan");
         }
 
         /// <inheritdoc />
@@ -141,16 +157,16 @@ namespace do_an_co_so.Migrations
                 name: "Blogs");
 
             migrationBuilder.DropTable(
-                name: "datTours");
+                name: "Phuongthucthanhtoans");
 
             migrationBuilder.DropTable(
-                name: "PKhachsans");
+                name: "DatTours");
 
             migrationBuilder.DropTable(
                 name: "Tours");
 
             migrationBuilder.DropTable(
-                name: "phuongthucthanhtoans");
+                name: "Khachsans");
         }
     }
 }

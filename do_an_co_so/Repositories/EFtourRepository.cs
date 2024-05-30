@@ -15,12 +15,12 @@ namespace do_an_co_so.Repositories
         public async Task<IEnumerable<Tour>> GetAllAsync()
         {
             //return await _context.Tours.ToListAsync();
-            return await _context.Tours.Include(p => p.Khachsan).ToListAsync();
+            return await _context.Tours.Include(p => p.MaTour).ToListAsync();
         }
 
         public async Task<Tour> GetByIdAsync(int id)
         {
-            return await _context.Tours.Include(p => p.Khachsan).FirstOrDefaultAsync(p => p.MaTour == id);
+            return await _context.Tours.Include(p => p.MaTour).FirstOrDefaultAsync(p => p.MaTour == id);
         }
 
         public async Task AddAsync(Tour Tour)

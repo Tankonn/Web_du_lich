@@ -11,23 +11,23 @@ namespace do_an_co_so.Repositories
         {
             _context = context;
         }
-        public async Task<IEnumerable<Khachsan>> GetAllAsync()
+        public async Task<IEnumerable<KhachSan>> GetAllAsync()
         {
             return await _context.Khachsans.Include(p => p.Tours).ToListAsync();
         }
 
-        public async Task<Khachsan> GetByIdAsync(int id)
+        public async Task<KhachSan> GetByIdAsync(int id)
         {
             return await _context.Khachsans.Include(p => p.Tours).FirstOrDefaultAsync(p => p.Makhachsan == id);
         }
 
-        public async Task AddAsync(Khachsan khachSan)
+        public async Task AddAsync(KhachSan khachSan)
         {
             _context.Khachsans.Add(khachSan);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(Khachsan khachSan)
+        public async Task UpdateAsync(KhachSan khachSan)
         {
             _context.Khachsans.Update(khachSan);
             await _context.SaveChangesAsync();

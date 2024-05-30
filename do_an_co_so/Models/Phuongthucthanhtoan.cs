@@ -2,12 +2,10 @@
 
 namespace do_an_co_so.Models
 {
-    public class Phuongthucthanhtoan
+    public class PhuongThucThanhToan
     {
-        [Key]
-        public int Mapt {  get; set; }
-        public string Tenpt {  get; set; }
+        [Key] public int Mapt { get; set; }
+        public string Tenpt { get; set; }
         public DatTour DatTour { get; set; }
-
     }
 }

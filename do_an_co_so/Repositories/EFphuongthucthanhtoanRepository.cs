@@ -12,32 +12,32 @@ namespace do_an_co_so.Repositories
         {
             _context = context;
         }
-        public async Task<IEnumerable<Phuongthucthanhtoan>> GetAllAsync()
+        public async Task<IEnumerable<PhuongThucThanhToan>> GetAllAsync()
         {
-            return await _context.phuongthucthanhtoans.Include(p => p.DatTour).ToListAsync();
+            return await _context.Phuongthucthanhtoans.Include(p => p.DatTour).ToListAsync();
         }
 
-        public async Task<Phuongthucthanhtoan> GetByIdAsync(int id)
+        public async Task<PhuongThucThanhToan> GetByIdAsync(int id)
         {
-            return await _context.phuongthucthanhtoans.Include(p => p.DatTour).FirstOrDefaultAsync(p => p.Mapt == id);
+            return await _context.Phuongthucthanhtoans.Include(p => p.DatTour).FirstOrDefaultAsync(p => p.Mapt == id);
         }
 
-        public async Task AddAsync(Phuongthucthanhtoan phuongthucthanhtoan)
+        public async Task AddAsync(PhuongThucThanhToan phuongthucthanhtoan)
         {
-            _context.phuongthucthanhtoans.Add(phuongthucthanhtoan);
+            _context.Phuongthucthanhtoans.Add(phuongthucthanhtoan);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(Phuongthucthanhtoan phuongthucthanhtoan)
+        public async Task UpdateAsync(PhuongThucThanhToan phuongthucthanhtoan)
         {
-            _context.phuongthucthanhtoans.Update(phuongthucthanhtoan);
+            _context.Phuongthucthanhtoans.Update(phuongthucthanhtoan);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var phuongthucthanhtoan = await _context.phuongthucthanhtoans.FindAsync(id);
-            _context.phuongthucthanhtoans.Remove(phuongthucthanhtoan);
+            var phuongthucthanhtoan = await _context.Phuongthucthanhtoans.FindAsync(id);
+            _context.Phuongthucthanhtoans.Remove(phuongthucthanhtoan);
             await _context.SaveChangesAsync();
         }
     }

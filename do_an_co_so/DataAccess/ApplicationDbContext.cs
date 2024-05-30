@@ -10,9 +10,9 @@ namespace do_an_co_so.DataAccess
         { }
         public DbSet<Tour> Tours { get; set; }
         public DbSet<Blog> Blogs { get; set; }
-        public DbSet<Khachsan> Khachsans { get; set; }
-        public DbSet<Phuongthucthanhtoan> phuongthucthanhtoans { get; set; }
-        public DbSet<DatTour> datTours { get; set; }
+        public DbSet<KhachSan> Khachsans { get; set; }
+        public DbSet<PhuongThucThanhToan> Phuongthucthanhtoans { get; set; }
+        public DbSet<DatTour> DatTours { get; set; }
 
     }
 }

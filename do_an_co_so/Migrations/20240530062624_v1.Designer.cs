@@ -12,8 +12,8 @@ using do_an_co_so.DataAccess;
 namespace do_an_co_so.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240529133035_v2")]
-    partial class v2
+    [Migration("20240530062624_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,10 +59,24 @@ namespace do_an_co_so.Migrations
 
             modelBuilder.Entity("do_an_co_so.Models.DatTour", b =>
                 {
-                    b.Property<string>("IdDattour")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdDattour")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<int>("Makhachsan1")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdDattour"));
+
+                    b.Property<string>("Diachi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("KhachsanMakhachsan")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Makhachsan")
                         .HasColumnType("int");
 
                     b.Property<int?>("Mapt")
@@ -71,38 +85,34 @@ namespace do_an_co_so.Migrations
                     b.Property<int?>("Matour")
                         .HasColumnType("int");
 
+                    b.Property<string>("Sdt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("TenKh")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Tinhtrang")
                         .HasColumnType("int");
 
-                    b.Property<string>("diachi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("sdt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("tourMaTour")
+                    b.Property<int>("TourMaTour")
                         .HasColumnType("int");
 
-                    b.Property<string>("yeucau")
+                    b.Property<string>("Yeucau")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdDattour");
 
-                    b.HasIndex("Makhachsan1");
+                    b.HasIndex("KhachsanMakhachsan");
 
-                    b.HasIndex("tourMaTour");
+                    b.HasIndex("TourMaTour");
 
-                    b.ToTable("datTours");
+                    b.ToTable("DatTours");
                 });
 
-            modelBuilder.Entity("do_an_co_so.Models.Khachsan", b =>
+            modelBuilder.Entity("do_an_co_so.Models.KhachSan", b =>
                 {
                     b.Property<int>("Makhachsan")
                         .ValueGeneratedOnAdd()
@@ -115,6 +125,10 @@ namespace do_an_co_so.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Dongia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Images")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -133,16 +147,12 @@ namespace do_an_co_so.Migrations
                     b.Property<int>("Tinhtrang")
                         .HasColumnType("int");
 
-                    b.Property<string>("images")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Makhachsan");
 
                     b.ToTable("Khachsans");
                 });
 
-            modelBuilder.Entity("do_an_co_so.Models.Phuongthucthanhtoan", b =>
+            modelBuilder.Entity("do_an_co_so.Models.PhuongThucThanhToan", b =>
                 {
                     b.Property<int>("Mapt")
                         .ValueGeneratedOnAdd()
@@ -150,8 +160,8 @@ namespace do_an_co_so.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Mapt"));
 
-                    b.Property<string>("DatTourIdDattour")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("DatTourIdDattour")
+                        .HasColumnType("int");
 
                     b.Property<string>("Tenpt")
                         .IsRequired()
@@ -161,7 +171,7 @@ namespace do_an_co_so.Migrations
 
                     b.HasIndex("DatTourIdDattour");
 
-                    b.ToTable("phuongthucthanhtoans");
+                    b.ToTable("Phuongthucthanhtoans");
                 });
 
             modelBuilder.Entity("do_an_co_so.Models.Tour", b =>
@@ -183,7 +193,11 @@ namespace do_an_co_so.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("KhachsanMakhachsan")
+                    b.Property<string>("Images")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("KhachSanMakhachsan")
                         .HasColumnType("int");
 
                     b.Property<string>("Lichtrinh")
@@ -209,62 +223,56 @@ namespace do_an_co_so.Migrations
                     b.Property<int>("Tinhtrang")
                         .HasColumnType("int");
 
-                    b.Property<string>("images")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("MaTour");
 
-                    b.HasIndex("KhachsanMakhachsan");
+                    b.HasIndex("KhachSanMakhachsan");
 
                     b.ToTable("Tours");
                 });
 
             modelBuilder.Entity("do_an_co_so.Models.DatTour", b =>
                 {
-                    b.HasOne("do_an_co_so.Models.Khachsan", "Makhachsan")
+                    b.HasOne("do_an_co_so.Models.KhachSan", "Khachsan")
                         .WithMany()
-                        .HasForeignKey("Makhachsan1")
+                        .HasForeignKey("KhachsanMakhachsan")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("do_an_co_so.Models.Tour", "tour")
+                    b.HasOne("do_an_co_so.Models.Tour", "Tour")
                         .WithMany()
-                        .HasForeignKey("tourMaTour")
+                        .HasForeignKey("TourMaTour")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Makhachsan");
+                    b.Navigation("Khachsan");
 
-                    b.Navigation("tour");
+                    b.Navigation("Tour");
                 });
 
-            modelBuilder.Entity("do_an_co_so.Models.Phuongthucthanhtoan", b =>
+            modelBuilder.Entity("do_an_co_so.Models.PhuongThucThanhToan", b =>
                 {
                     b.HasOne("do_an_co_so.Models.DatTour", "DatTour")
-                        .WithMany("phuongthucthanhtoan")
-                        .HasForeignKey("DatTourIdDattour");
+                        .WithMany("Phuongthucthanhtoan")
+                        .HasForeignKey("DatTourIdDattour")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("DatTour");
                 });
 
             modelBuilder.Entity("do_an_co_so.Models.Tour", b =>
                 {
-                    b.HasOne("do_an_co_so.Models.Khachsan", "Khachsan")
+                    b.HasOne("do_an_co_so.Models.KhachSan", null)
                         .WithMany("Tours")
-                        .HasForeignKey("KhachsanMakhachsan")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Khachsan");
+                        .HasForeignKey("KhachSanMakhachsan");
                 });
 
             modelBuilder.Entity("do_an_co_so.Models.DatTour", b =>
                 {
-                    b.Navigation("phuongthucthanhtoan");
+                    b.Navigation("Phuongthucthanhtoan");
                 });
 
-            modelBuilder.Entity("do_an_co_so.Models.Khachsan", b =>
+            modelBuilder.Entity("do_an_co_so.Models.KhachSan", b =>
                 {
                     b.Navigation("Tours");
                 });
