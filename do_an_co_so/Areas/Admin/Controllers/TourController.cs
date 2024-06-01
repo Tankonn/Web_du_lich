@@ -10,7 +10,7 @@ namespace do_an_co_so.Areas.Admin.Controllers
     [Area("Admin")]
     public class TourController : Controller
     {
-       /* private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly ItourRepository _tourRepository;
         private readonly IdattourRepository _dattourRepository;
 
@@ -102,6 +102,6 @@ namespace do_an_co_so.Areas.Admin.Controllers
         {
             await _tourRepository.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
-        }*/
+        }
     }
 }
