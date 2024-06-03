@@ -1,6 +1,7 @@
 using do_an_co_so.DataAccess;
 using do_an_co_so.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Azure.Management.Storage.Models;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Core.Types;
 
@@ -41,6 +42,13 @@ app.UseAuthentication(); // Thêm middleware xác thực
 app.UseAuthorization(); // Thêm middleware phân quyền
 
 app.MapRazorPages();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Tour}/{action=Index}/{id?}"
+    );
+});
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
