@@ -1,5 +1,50 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model do_an_co_so.Models.Tour
+
 @{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+
+<h1>Xoá Tour</h1>
+
+<h3>Bạn có chắc chắn muốn xoá tour này không?</h3>
+<div>
+    <h4>Tour</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tên Tour
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TenTour)
+        </dd>
+        
+        <dd class="col-sm-10">
+            <img src="@Html.DisplayFor(model => model.Images)" width="auto" height="300px" alt="Loi">
+        </dd>
+       @* <dt class="col-sm-2">
+            Tác giả
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TacGia.TenTacGia)
+        </dd>
+        <dt class="col-sm-2">
+            Thể loại
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TheLoai.TenTheLoai)
+        </dd>
+        <dt class="col-sm-2">
+            Trạng thái
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TrangThai.TrangThaiTruyen)
+        </dd>*@
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaTour" />
+        <input type="submit" value="Xoá" class="btn btn-danger" /> 
+        <a class="btn btn-info" asp-action="Index">Trở về danh sách</a>
+    </form>
+</div>
