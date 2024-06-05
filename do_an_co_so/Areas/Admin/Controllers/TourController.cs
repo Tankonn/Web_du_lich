@@ -1,6 +1,7 @@
 ﻿using do_an_co_so.DataAccess;
 using do_an_co_so.Models;
 using do_an_co_so.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace do_an_co_so.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class TourController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,6 +22,7 @@ namespace do_an_co_so.Areas.Admin.Controllers
             _tourRepository = tourRepository;
             _dattourRepository = dattourRepository;
         }
+
         public async Task<IActionResult> Index()
         {
             var Tours = await _tourRepository.GetAllAsync();
