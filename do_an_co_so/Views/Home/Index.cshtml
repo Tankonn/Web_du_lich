@@ -2,7 +2,6 @@
     ViewData["Title"] = "Trang chu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model IEnumerable<do_an_co_so.Models.Tour>
 <main>
 <div class="text-center">
     <section class="banner">
@@ -11,7 +10,7 @@
     <section class="noi-bat">
         <h2>Địa Điểm Nổi Bật</h2>
         <ul>
-                  @foreach (var tour in Model)
+                 @* @foreach (var tour in Model)
                  {
                     <li>
                         <a asp-action="Details" asp-route-id="@tour.MaTour">
@@ -19,7 +18,7 @@
                             <h3>@tour.TenTour</h3>
                        </a>
                     </li>
-                } 
+                } *@
                 
             <li>
                 <a href="#">
