@@ -2,6 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\do_an_co_so",
+    "\\do_an_co_so\\Areas",
+    "\\do_an_co_so\\Controllers",
+    "\\do_an_co_so\\DataAccess",
     "\\do_an_co_so\\Models"
   ],
   "SelectedNode": "\\do_an_co_so\\Models\\DatTour.cs",

@@ -1,49 +1,80 @@
-﻿@model do_an_co_so.Models.Tour
-
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
 @{
+<<<<<<< HEAD
     ViewData["Title"] = "Create";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Areas/Admin/Views/tour/Create.cshtml";
 }
-<h1>Thêm</h1>
+
+<h1>Create</h1>
+
 <h4>Tour</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="TenTour" class="control-label">Tên Tour</label>
+                <label asp-for="TenTour" class="control-label"></label>
                 <input asp-for="TenTour" class="form-control" />
                 <span asp-validation-for="TenTour" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Mota" class="control-label">Mô tả</label>
+                <label asp-for="Mota" class="control-label"></label>
                 <input asp-for="Mota" class="form-control" />
                 <span asp-validation-for="Mota" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Images" class="control-label">Anh Tour</label>
-                <input type="file" asp-for="Images" class="form-control" />
+                <label asp-for="Lichtrinh" class="control-label"></label>
+                <input asp-for="Lichtrinh" class="form-control" />
+                <span asp-validation-for="Lichtrinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Banggia" class="control-label"></label>
+                <input asp-for="Banggia" class="form-control" />
+                <span asp-validation-for="Banggia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Thongtinlienquan" class="control-label"></label>
+                <input asp-for="Thongtinlienquan" class="form-control" />
+                <span asp-validation-for="Thongtinlienquan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Images" class="control-label"></label>
+                <input asp-for="Images" class="form-control" />
                 <span asp-validation-for="Images" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TacGiaId" class="control-label">Tác Giả</label>
-                <select asp-for="TacGiaId" class="form-control" asp-items="ViewBag.TacGias"></select>
+                <label asp-for="Tinhtrang" class="control-label"></label>
+                <input asp-for="Tinhtrang" class="form-control" />
+                <span asp-validation-for="Tinhtrang" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TheLoaiId" class="control-label">Thể Loại</label>
-                <select asp-for="TheLoaiId" class="form-control" asp-items="ViewBag.TheLoais"></select>
+                <label asp-for="Diadiemkhoihanh" class="control-label"></label>
+                <input asp-for="Diadiemkhoihanh" class="form-control" />
+                <span asp-validation-for="Diadiemkhoihanh" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TrangThaiId" class="control-label">Trạng Thái</label>
-                <select asp-for="TrangThaiId" class="form-control" asp-items="ViewBag.TrangThais"></select>
+                <label asp-for="Thoiluong" class="control-label"></label>
+                <input asp-for="Thoiluong" class="form-control" />
+                <span asp-validation-for="Thoiluong" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Thêm" class="btn btn-primary" />
-                <a class="btn btn-info" asp-action="Index">Trở về danh sách</a>
+                <label asp-for="Diemden" class="control-label"></label>
+                <input asp-for="Diemden" class="form-control" />
+                <span asp-validation-for="Diemden" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+=======
+}
+>>>>>>> parent of 819bf98 (da co trong admin)

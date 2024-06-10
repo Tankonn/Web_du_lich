@@ -1,7 +1,9 @@
 using do_an_co_so.DataAccess;
 using do_an_co_so.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Azure.Management.Storage.Models;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol.Core.Types;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +12,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Cấu hình Identity với một lần đăng ký
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-.AddDefaultTokenProviders()
-.AddDefaultUI()
-.AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders()
+    .AddDefaultUI();
 
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
@@ -24,15 +26,10 @@ builder.Services.AddScoped<IdattourRepository, EFdattourRepository>();
 builder.Services.AddScoped<IkhachsanRepository, EFkhachsanRepository>();
 builder.Services.AddScoped<IphuongthucthanhtoanRepository, EFphuongthucthanhtoanRepository>();
 builder.Services.AddScoped<ItourRepository, EFtourRepository>();
-
 var app = builder.Build();
 
 // Cấu hình pipeline xử lý HTTP request
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-else
+if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
