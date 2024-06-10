@@ -15,7 +15,7 @@ namespace do_an_co_so.Areas.Admin.Controllers
 >>>>>>> parent of 819bf98 (da co trong admin)
     public class TourController : Controller
     {
-        private readonly ApplicationDbContext _context;
+       /* private readonly ApplicationDbContext _context;
         private readonly ItourRepository _tourRepository;
         private readonly IdattourRepository _dattourRepository;
         private readonly IkhachsanRepository _khachsanRepository;

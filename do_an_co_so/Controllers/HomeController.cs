@@ -19,7 +19,7 @@ namespace do_an_co_so.Controllers
         public async Task<IActionResult> Index()
         {
             var tours = await _context.Tours.ToListAsync();
-            return View(tours);
+            return View();
         }
         public async Task<IActionResult> Details(int id)
         {
